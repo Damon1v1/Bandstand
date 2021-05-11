@@ -6,9 +6,13 @@ const SERVER = "http://127.0.0.1:8080";
 
 
 function App() {
+
+  const socket = socketClient(SERVER);
+
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header"></header>
+
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -21,7 +25,6 @@ function App() {
         >
           Learn React
         </a>
-      </header>
     </div>
   );
 }
