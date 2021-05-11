@@ -8,7 +8,9 @@ const SERVER = "http://127.0.0.1:8080";
 function App() {
 
   const socket = socketClient(SERVER);
-
+        socket.on('connection', () => {
+          console.log("Connected to back end")
+        })
   return (
     <div className="App">
       <header className="App-header"></header>
