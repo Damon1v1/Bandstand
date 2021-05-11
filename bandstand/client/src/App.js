@@ -1,15 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import socketClient  from "socket.io-client";
-const SERVER = "http://127.0.0.1:8080";
+import { io } from "socket.io-client";
+const SERVER = "http://localhost:8080";
 
 
 function App() {
 
-  const socket = socketClient(SERVER);
+  const socket = io(SERVER, {
+    withCredentials: true,
+    extraHeaders: {"my-custom-header":
+                  "heady"}
+  });
         socket.on('connection', () => {
-          console.log("Connected to back end")
+          console.log("connected")
         })
   return (
     <div className="App">
