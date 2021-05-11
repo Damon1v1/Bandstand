@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./log.css";
 
 export default class SignUp extends Component {
     render() {

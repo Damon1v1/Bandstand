@@ -1,0 +1,35 @@
+
+.Col1 {
+    border: 1px solid black;
+    padding-bottom: 30%;
+    background-color: rgb(39, 152, 160);
+}
+
+.Col2 {
+    border: 1px solid black;
+    padding-bottom: 30%;
+    background-color: white;
+}
+.Row1 {
+    padding-bottom: 5%;
+    border: 2px solid rgb(39, 152, 160);
+    background-color: white;
+    border-top: 6px rgb(39, 152, 160);
+}
+body {
+    background-color: rgb(39, 152, 160);
+}
+.name {
+    color: white;
+    text-align: center;
+}
+
+.Image {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.btn{
+    color: white;
+    border-radius: 10%;
+}
