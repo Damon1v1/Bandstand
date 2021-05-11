@@ -7,6 +7,7 @@ import Chatroom from "./pages/Chatroom";
 //import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import forgotPass from "./pages/forgotPass";
 
 function App() {
   return (
@@ -15,9 +16,11 @@ function App() {
         
         <Wrapper>
           <Route exact path="/" component={Login} />
-          <Route exact path="/about" component={Login} />
-          <Route exact path="/about" component={Signup} />
-          <Route exact path="/chatroom" component={Chatroom} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Signup" component={Signup} />
+          <Route exact path="/Chatroom" component={Chatroom} />
+          <Route exact path="/forgotPass" component={forgotPass} />
+
         </Wrapper>
        
       </div>

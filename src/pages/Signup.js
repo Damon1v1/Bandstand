@@ -29,7 +29,7 @@ export default class SignUp extends Component {
 
                 <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
                 <p className="forgot-password text-right">
-                    <a href="/sign-in">Already Registered</a>
+                    <a href="/Login">Already Registered</a>
                 </p>
             </form>
         );

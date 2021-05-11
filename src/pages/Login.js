@@ -34,7 +34,7 @@ export default class Login extends Component {
 
 
                 <p className="forgot-password text-right">
-                    <a href="/sign-up">Register An Account</a><br></br>
+                    <a href="/SignUp">Register An Account</a><br></br>
                     <a href="/forgotPass">Forgot My Password</a>
                 </p>
             </form>
