@@ -1,8 +1,13 @@
+
 import React, { Component } from "react";
+import {Link } from "react-router-dom";
+import "./log.css";
+
 
 export default class Login extends Component {
     render() {
         return (
+          <div className="log">
             <form>
                 <h3>Sign In</h3>
 
@@ -23,11 +28,24 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                <Link to="/chatroom"><button type="submit" className="btn btn-primary btn-block">
+                  Submit
+                  </button></Link>
+
+
                 <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
+                    <a href="/sign-up">Register An Account</a><br></br>
+                    <a href="/forgotPass">Forgot My Password</a>
                 </p>
             </form>
+          </div>
         );
     }
 }
+
+
+
+
+
+
+
