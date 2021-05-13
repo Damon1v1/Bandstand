@@ -36,9 +36,6 @@ function Chatroom() {
                     <div className="name"><strong>Name of User</strong></div><br />
                     <div>
                         <Link to="#">
-                            <button type="submit" className="btn btn-block">Home</button>
-                        </Link> <br />
-                        <Link to="#">
                             <button type="submit" className="btn btn-block">Profile</button>
                         </Link> <br />
                         <Link to="#">
@@ -74,15 +71,15 @@ function Chatroom() {
 
                         <Media>
                             <img
-                                width={150}
-                                height={150}
+                                width={200}
+                                height={200}
                                 className="mr-3"
                                 src="music.gif"
                                 alt="Generic placeholder"
                             />
                             <Media.Body>
-                                <h5>Media Heading</h5>
-                                <iframe src="https://open.spotify.com/embed/track/4jDmJ51x1o9NZB5Nxxc7gY" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                                <h5>Now Playing...</h5>
+                                <iframe src="https://open.spotify.com/embed/track/4jDmJ51x1o9NZB5Nxxc7gY" width="1000" height="111" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                             </Media.Body>
                         </Media>
 
@@ -92,7 +89,7 @@ function Chatroom() {
                             <ChatWindow></ChatWindow>
                         </Col>
 
-                        <Col className="Col2" sm={3} ><h2>
+                        <Col className="Col2" sm={3} ><div>
                             Time can never mend
                             The careless whisper of a good friend
                             To the heart and mind
@@ -150,7 +147,7 @@ function Chatroom() {
                             Now that you're gone
                             What I did that was so wrong?
                             So wrong that you had to leave me alone?
-                            </h2>
+                            </div>
                         </Col>
                     </Row>
 
