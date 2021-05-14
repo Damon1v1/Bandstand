@@ -13,12 +13,7 @@ import Media from 'react-bootstrap/Media';
 import "./style.css";
 import Image from 'react-bootstrap/Image';
 import { Link } from "react-router-dom";
-
-
-
-
-
-
+import SpotifyPlayer from "../components/SpotifyPlayer";
 
 function Chatroom() {
 
@@ -78,8 +73,9 @@ function Chatroom() {
                                 alt="Generic placeholder"
                             />
                             <Media.Body>
+                                <SpotifyPlayer></SpotifyPlayer>
                                 <h5>Now Playing...</h5>
-                                <iframe src="https://open.spotify.com/embed/track/4jDmJ51x1o9NZB5Nxxc7gY" width="1000" height="111" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                                {/* <iframe src="https://open.spotify.com/embed/track/4jDmJ51x1o9NZB5Nxxc7gY" width="1000" height="111" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe> */}
                             </Media.Body>
                         </Media>
 
