@@ -16,7 +16,14 @@ http.listen(PORT, () => {
 });
 
 io.on('connection', (socket) => { /* socket object may be used to send specific messages to the new connected client */
-
+    // check connection
     console.log('new client connected');
     socket.emit('connection', null);
+    // log user id
+    socket.emit("your id", socket.id);
+    // emit message
+    socket.on("send message", body => {
+        io.emit("message", body)
+    });
+    
 });
