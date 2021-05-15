@@ -3,15 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 import { io } from "socket.io-client";
 const SERVER = "http://localhost:8080";
-
+var connectionOptions =  {
+  "force new connection" : true,
+  "reconnectionAttempts": "Infinity", 
+  "timeout" : 10000,                  
+  "transports" : ["websocket"]
+};
 
 function App() {
 
-  const socket = io(SERVER, {
-    withCredentials: true,
-    extraHeaders: {"my-custom-header":
-                  "heady"}
-  });
+  const socket = io(SERVER, connectionOptions);
         socket.on('connection', () => {
           console.log("connected")
         })
