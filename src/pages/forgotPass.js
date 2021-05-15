@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from "react";
+import "./log.css";
 
- function index() {
-    return (
-        <div>
+export default class forgotPass extends Component {
+    render() {
+        return (
             <form>
                 <h3>Forgot Password</h3>
 
@@ -16,9 +17,7 @@ import React from 'react';
                 <a href="/Login">Woops, I Remembered My Password</a>
                 </p>
             </form>
-        </div>
-    )
+        );
+    }
 }
-
-export default index;
 

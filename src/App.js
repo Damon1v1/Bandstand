@@ -5,23 +5,28 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Chatroom from "./pages/Chatroom";
 //import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import forgotPass from "./pages/forgotPass";
+//import { Container } from "react-bootstrap";
+
 
 function App() {
   return (
     <Router>
-      <div>
+      
         
-        <Wrapper>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/about" component={Login} />
-          <Route exact path="/about" component={Signup} />
-          <Route exact path="/chatroom" component={Chatroom} />
-        </Wrapper>
-       
-      </div>
-      <Footer />
+          <Wrapper>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/Login" component={Login} />
+            <Route exact path="/Signup" component={Signup} />
+            <Route exact path="/Chatroom" component={Chatroom} />
+            <Route exact path="/forgotPass" component={forgotPass} />
+
+          </Wrapper>
+        
+      
+     
     </Router>
   );
 }
