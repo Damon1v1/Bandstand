@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { /*useEffect,*/ useState } from "react";
 
 import "./ChatRoom.css";
-import useChat from "../useChat";
+import useChat from "../../useChat";
 import ChatMessage from "../ChatMessage/ChatMessage";
-import useTyping from "../useTyping";
+//import useTyping from "../useTyping";
 import NewMessageForm from "../NewMessageForm/NewMessageForm";
 import TypingMessage from "../TypingMessage/TypingMessage";
 import Users from "../Users/Users";
@@ -17,12 +17,12 @@ const ChatRoom = (props) => {
     users,
     typingUsers,
     sendMessage,
-    startTypingMessage,
-    stopTypingMessage,
+    //startTypingMessage,
+    //stopTypingMessage,
   } = useChat(roomId);
   const [newMessage, setNewMessage] = useState("");
 
-  const { isTyping, startTyping, stopTyping, cancelTyping } = useTyping();
+  // const { isTyping, startTyping, stopTyping, cancelTyping } = useTyping();
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
@@ -30,15 +30,15 @@ const ChatRoom = (props) => {
 
   const handleSendMessage = (event) => {
     event.preventDefault();
-    cancelTyping();
+    //cancelTyping();
     sendMessage(newMessage);
     setNewMessage("");
   };
 
-  useEffect(() => {
-    if (isTyping) startTypingMessage();
-    else stopTypingMessage();
-  }, [isTyping]);
+  // useEffect(() => {
+  //   if (isTyping) startTypingMessage();
+  //   else stopTypingMessage();
+  // }, [isTyping]);
 
   return (
     <div className="chat-room-container">
@@ -64,8 +64,8 @@ const ChatRoom = (props) => {
       <NewMessageForm
         newMessage={newMessage}
         handleNewMessageChange={handleNewMessageChange}
-        handleStartTyping={startTyping}
-        handleStopTyping={stopTyping}
+        //handleStartTyping={startTyping}
+        //handleStopTyping={stopTyping}
         handleSendMessage={handleSendMessage}
       ></NewMessageForm>
     </div>
