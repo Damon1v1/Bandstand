@@ -10,7 +10,7 @@ import ChatRoom from "./components/ChatRoom/ChatRoom";
 //   "transports" : ["websocket"]
 // };
 
-function App() {
+function Chat() {
   return (
     <Router>
       <Switch>
@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default Chat;
