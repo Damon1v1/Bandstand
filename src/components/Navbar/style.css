@@ -1,11 +1,12 @@
 nav.navbar.navbar-default {
   margin-bottom: 0;
-  color: #000;
+
   
 }
 .navbar {
-  background-color: rgb(39, 152, 160);
-  color:white;
+  background-color: rgb(28, 77, 97);
+  color: white;
+  font-size: 18px;
   
 }
 

@@ -1,39 +1,59 @@
 
 .Col1 {
     border: 1px solid black;
-    padding-bottom: 10%;
-    
+    padding-bottom: 3%;
     background-color: rgb(39, 152, 160);
 }
 
 .Col2 {
     border: 1px solid black;
-    padding-bottom: 10%;
     background-color: white;
 }
 .Row1 {
-    padding-bottom: 5%;
-    border: 2px solid rgb(39, 152, 160);
+    padding-bottom: 0%;
+    border: 5px solid rgb(39, 152, 160);
     background-color: white;
     border-top: 6px rgb(39, 152, 160);
+    width: 100% !important;
+    text-align: center;
+    box-shadow:5px 10px;
 }
+
 body {
     background-color: rgb(39, 152, 160);
+    height: 100%;
+    width: 100vh;
 }
+
 .name {
     color: white;
     text-align: center;
 }
 
-.Image {
-    position: relative;
-    left: 25%;
-}
+
 
 .btn{
-    color: white;
+    color: rgb(63, 137, 172);
     border-radius: 10%;
 }
+.main-row{
+    height: 80%;
+    width: 100%;
+
+}
+
+.media{
+    width: 100%;
+    float: center;
+    text-align:center;
+
+}
+.side {
+    text-align: center;
+
+}
 .chat {
-   
+    text-align: center;
+    
+
 }

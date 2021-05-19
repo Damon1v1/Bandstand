@@ -9,8 +9,8 @@ body {
   display: flex;
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
-  background: -webkit-linear-gradient(to right, black, #f64f59, #c471ed, #12c2e9, rgb(92, 175, 92), black);
-  background: linear-gradient(to right, black, #f64f59, #c471ed, #12c2e9, rgb(92, 175, 92), black);
+  background: -webkit-linear-gradient(to right, black,  hsl(191, 86%, 40%), rgb(4, 29, 4), black);
+  background: linear-gradient(to right, black, hsl(191, 86%, 40%), black);
 }
 
 h1,h2,h3,h4,h5,h6,label,span {

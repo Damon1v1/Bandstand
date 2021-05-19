@@ -8,13 +8,13 @@ function ChatWindow() {
   
   return (
       
-    <div style = {{height:"100vh"}}>
+    <div>
         <div className="flex-grow-1 overflow-auto">
-            <div className="d-flex flex-column align-items-start justify-content-end px-3">
+            <div className="d-flex flex-column align-items-start justify-content-end px-3 height: 100% ">
             </div>
         </div>
       <Form className="form">
-        <Form.Group className="m-2">
+        <Form.Group>
           <InputGroup>
             <Form.Control
               as="textarea"
@@ -22,7 +22,7 @@ function ChatWindow() {
               style={{ height: '75px', resize: 'none'}}
             />
             <InputGroup.Append>
-              <Button type="submit">Send</Button>
+              <Button className="btn" type="submit">Send</Button>
             </InputGroup.Append>
           </InputGroup>
         </Form.Group>
