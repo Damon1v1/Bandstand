@@ -1,5 +1,5 @@
 import React from "react";
-import UserAvatar from "../UserAvatar/UserAvatar";
+import UserAvatar from "../../UserAvatar/UserAvatar";
 
 import "./Users.css";
 
