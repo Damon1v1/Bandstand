@@ -2,8 +2,8 @@ import React, { Component, useState} from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
-import Home from "./components/Home/Home";
-import ChatRoom from "./components/ChatRoom/ChatRoom";
+import Home from "./chatComponents/Home/Home";
+import ChatRoom from "./chatComponents/ChatRoom/ChatRoom";
 // var connectionOptions =  {
 //   "force new connection" : true,
 //   "reconnectionAttempts": "Infinity", 
