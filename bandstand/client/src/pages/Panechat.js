@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
-import ChatWindow from "../components/ChatWindow";
+// import ChatWindow from "../components/ChatWindow";
+import Chat from "../components/chat/Chat";
 import "./Pane.css";
 
 
@@ -32,7 +33,7 @@ const Panechat  = () => {
                     // triggered on "<" on left top click or on outside click
                     setState({ isPaneOpen: false }); }}
                     >
-                <div><ChatWindow /></div>
+                <div><Chat /></div>
             </SlidingPane>
                 
         </div>
