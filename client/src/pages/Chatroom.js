@@ -33,28 +33,11 @@ function Chatroom() {
                     <br />
                     <Row className="Row1 row justify-content-center" >
                         <div className="media">
-                        {/* <Button variant="danger" size="lg"> */}
+                       
                                 <SpotifyPlayer></SpotifyPlayer>
-                                        
-
-                        {/* <div className="mb-2 ">
-                                        
-                                    </div>  */}
-                            {/* <Media> */}
-                            
-                                {/* <img
-                                    width={200}
-                                    height={200}
-                                    className="mr-3"
-                                    src="music.gif"
-                                    alt="Generic placeholder"
-                                /> */}
-{/*                             
-                                <Media.Body>
+                                
+                                <iframe src="https://open.spotify.com/embed/playlist/4qtTFHqg0TsNXJkgOPclKU" width="300" height="380" frameborder="0" allowtransparency="true" title="music" allow="encrypted-media"></iframe>  
                                     
-                                </Media.Body>
-                        
-                            </Media> */}
                         </div>
 
                     </Row>

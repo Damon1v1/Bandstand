@@ -5,15 +5,14 @@ export default class forgotPass extends Component {
     render() {
         return (
             <form>
-                <h3>Forgot Password</h3>
-
+                <h1><strong>Forgot Password</strong></h1>
+                <br />
                 <div className="form-group">
-                    <label>Email address</label>
                     <input type="email" className="form-control" placeholder="Enter email" />
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
-                <p className="forgot-password text-right">
+                <button type="submit" className="btnn btn-light btn-block">Submit</button>
+                <p className="forgot-password text-center">
                 <a href="/Login">Woops, I Remembered My Password</a>
                 </p>
             </form>

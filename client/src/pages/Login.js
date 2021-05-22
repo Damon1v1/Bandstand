@@ -9,15 +9,16 @@ export default class Login extends Component {
         return (
           <div className="log">
             <form>
-                <h3>Sign In</h3>
+                <h1>Sign In</h1>
+                <br />
 
                 <div className="form-group">
-                    <label>Email address</label>
+                    
                     <input type="email" className="form-control" placeholder="Enter email" />
                 </div>
-
+                <br />
                 <div className="form-group">
-                    <label>Password</label>
+                    
                     <input type="password" className="form-control" placeholder="Enter password" />
                 </div>
 
@@ -28,15 +29,24 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <Link to="/chatroom"><button type="submit" className="btn btn-primary btn-block">
-                  Submit
+                <Link to="/chatroom"><button type="submit" className="btnn bg-light btn-block">
+                  <strong>Submit</strong>
                   </button></Link>
 
-
-                <p className="forgot-password text-right">
-                    <a href="/SignUp">Register An Account</a><br></br>
-                    <a href="/forgotPass">Forgot My Password</a>
+                <br />
+                <p className="forgot-password">
+                    <a href="/SignUp" className=" text-right">Register An Account</a>
+                  
                 </p>
+
+                <p className="forgot-password">
+                
+                    <a href="/forgotPass" className="text-right">Forgot My Password</a>
+                </p>
+                
+                
+               
+                
             </form>
           </div>
         );
