@@ -3,7 +3,7 @@ import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
 import ChatWindow from "../components/ChatWindow";
 import "./Pane.css";
-
+//import Chat from "../components/chat/Chat";
 
 const Panechat  = () => {
 
