@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg fluid">
       <h1 className="navbar-brand" ><strong>Bandstand</strong></h1>
-      <Navbar className="justify-content-end">
+      <navbar className="justify-content-end">
         <ul className="navbar-nav ">
            <li className="nav-item justify-right">
             <Link
@@ -38,7 +38,7 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-      </Navbar>
+      </navbar>
     </nav>
   );
 }
