@@ -14,6 +14,11 @@ app.use(cors());
 // create express server
 const server = http.createServer(app);
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/users").then(
+  () => { console.log('Database is connected') },
+  err => { console.log('Can not connect to the database' + err) }
+);;
+
 // set up websocket and cors permission on the server
 const io = socketIo(server, {
   cors: {
