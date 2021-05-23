@@ -1,14 +1,20 @@
+// establish dependencies
 const http = require("http");
 const express = require("express");
 const cors = require("cors");
 const socketIo = require("socket.io");
 const { addUser, removeUser, getUsersInRoom } = require("./users");
 const { addMessage, getMessagesInRoom } = require("./messages");
+const mongoose = require("mongoose")
 
+// set app to use express and cors
 const app = express();
 app.use(cors());
 
+// create express server
 const server = http.createServer(app);
+
+// set up websocket and cors permission on the server
 const io = socketIo(server, {
   cors: {
     origin: "http://localhost:3000",
@@ -17,7 +23,10 @@ const io = socketIo(server, {
   },
 });
 
-const PORT = 4000;
+// back-end port number
+const PORT = process.env.PORT || 4000;
+
+// establish socket.io controls
 const USER_JOIN_CHAT_EVENT = "USER_JOIN_CHAT_EVENT";
 const USER_LEAVE_CHAT_EVENT = "USER_LEAVE_CHAT_EVENT";
 const NEW_CHAT_MESSAGE_EVENT = "NEW_CHAT_MESSAGE_EVENT";
@@ -27,20 +36,20 @@ const STOP_TYPING_MESSAGE_EVENT = "STOP_TYPING_MESSAGE_EVENT";
 io.on("connection", (socket) => {
   console.log(`${socket.id} connected`);
 
-  // Join a conversation
+  // join a conversation
   const { roomId, name, picture } = socket.handshake.query;
   socket.join(roomId);
 
   const user = addUser(socket.id, roomId, name, picture);
   io.in(roomId).emit(USER_JOIN_CHAT_EVENT, user);
 
-  // Listen for new messages
+  // listen for new messages
   socket.on(NEW_CHAT_MESSAGE_EVENT, (data) => {
     const message = addMessage(roomId, data);
     io.in(roomId).emit(NEW_CHAT_MESSAGE_EVENT, message);
   });
 
-  // Listen typing events
+  // listen typing events
   socket.on(START_TYPING_MESSAGE_EVENT, (data) => {
     io.in(roomId).emit(START_TYPING_MESSAGE_EVENT, data);
   });
@@ -48,7 +57,7 @@ io.on("connection", (socket) => {
     io.in(roomId).emit(STOP_TYPING_MESSAGE_EVENT, data);
   });
 
-  // Leave the room if the user closes the socket
+  // leave the room if the user closes the socket
   socket.on("disconnect", () => {
     removeUser(socket.id);
     io.in(roomId).emit(USER_LEAVE_CHAT_EVENT, user);
@@ -56,6 +65,7 @@ io.on("connection", (socket) => {
   });
 });
 
+// start server
 server.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
