@@ -26,7 +26,7 @@ export default class Login extends Component {
 
     handleOnChangeUserName = (e) => {
         this.setState({
-          user_name: e.target.value,
+          username: e.target.value,
         });
     };
 
@@ -38,7 +38,7 @@ export default class Login extends Component {
 
     onSubmit = async (e) => {
         const data = {
-          user_name: this.state.user_name,
+          username: this.state.username,
           password: this.state.password,
         };
         const loginResult = await LoginService(data);

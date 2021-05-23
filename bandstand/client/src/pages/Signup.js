@@ -21,7 +21,7 @@ export default class SignUp extends Component {
         this.state = {
           first_name: '',
           last_name: '',
-          user_name: '',
+          username: '',
           password: '',
           register: false,
           error: false,
@@ -42,7 +42,7 @@ export default class SignUp extends Component {
     
       handleOnChangeUserName = e => {
         this.setState ({
-          user_name: e.target.value,
+          username: e.target.value,
         });
       };
     
@@ -54,16 +54,16 @@ export default class SignUp extends Component {
     
       handleOnBlur = async e => {
         this.setState ({
-          user_name: e.target.value,
+          username: e.target.value,
         });
         const data = {
-          user_name: this.state.user_name,
+          username: this.state.user_name,
         };
         const isUsernameTaken = await UsernameValidation (data);
     
         isUsernameTaken === 204
-          ? this.setState ({user_name_taken: true})
-          : this.setState ({user_name_taken: false});
+          ? this.setState ({username_taken: true})
+          : this.setState ({username_taken: false});
       };
     
       onSubmit = async e => {
@@ -71,7 +71,7 @@ export default class SignUp extends Component {
         const data = {
           first_name: this.state.first_name,
           last_name: this.state.last_name,
-          user_name: this.state.user_name,
+          username: this.state.username,
           password: this.state.password,
         };
     
@@ -80,7 +80,7 @@ export default class SignUp extends Component {
           this.setState ({
             first_name: '',
             last_name: '',
-            user_name: '',
+            username: '',
             password: '',
             register: true,
             error: false,
@@ -108,7 +108,7 @@ export default class SignUp extends Component {
                 </div>
 
                 <div className="form-group">
-                    <label>Email address</label>
+                    <label>Username</label>
                     <input type="email" className="form-control" placeholder="Enter email" />
                 </div>
 
