@@ -1,10 +1,60 @@
-
 import React, { Component } from "react";
-import {Link } from "react-router-dom";
-import "./log.css";
+import { Link } from "react-router-dom";
+import LoginService from "../utils/LoginService"
+import Message from "../components/elements/Message"
+import Error from "../components/elements/Error"
+import "./log.css"
+import {
+    COMMON_FIELDS,
+    REGISTRATION_FIELDS,
+    LOGIN_FIELDS,
+    LOGIN_MESSAGE,
+    ERROR_IN_LOGIN,
+  } from '../MessageBundle';
 
 
 export default class Login extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            username: '',
+            password: '',
+            error: false,
+            loginSuccess: false,
+        };
+    }
+
+    handleOnChangeUserName = (e) => {
+        this.setState({
+          user_name: e.target.value,
+        });
+    };
+
+    handleOnChangePassword = (e) => {
+        this.setState({
+          password: e.target.value,
+        });
+    };
+
+    onSubmit = async (e) => {
+        const data = {
+          user_name: this.state.user_name,
+          password: this.state.password,
+        };
+        const loginResult = await LoginService(data);
+        if (loginResult !== 200) {
+          this.setState({
+            error: true,
+            loginSuccess: false,
+          });
+        } else
+          this.setState({
+            loginSuccess: true,
+            error: false,
+          });
+    };
+    
     render() {
         return (
           <div className="log">
