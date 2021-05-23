@@ -2,6 +2,17 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+    
+    first_name: {
+        type: String,
+        match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
+        required: [true, "can't be blank"],
+    },
+    last_name: {
+        type: String,
+        match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
+        required: [true, "can't be blank"]
+    },
     username: { 
         type: String,
         unique: true,
