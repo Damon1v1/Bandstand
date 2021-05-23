@@ -94,8 +94,8 @@ class SpotifyPlayer extends Component {
               href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
                 "%20"
               )}&response_type=token&show_dialog=true`}
-            > to Spotify
-              Login
+            > Login to Spotify
+              
             </a>
           )}
           {this.state.token && !this.state.no_data && (

@@ -11,10 +11,7 @@
 }
 .Row1 {
     padding-bottom: 0%;
-    border: 5px solid rgb(39, 152, 160);
     background-color: white;
-    border-top: 6px rgb(39, 152, 160);
-    width: 100% !important;
     text-align: center;
     box-shadow:5px 10px;
 }

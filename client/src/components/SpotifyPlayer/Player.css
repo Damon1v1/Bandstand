@@ -14,20 +14,19 @@
 }
 
 .now-playing__img {
+    width: 50%;
     float: right;
-    margin-right: 1px;
     text-align: right;
-    width: 45%;
 }
 
 .now-playing__img img {
-    max-width: 80vmin;
     width: 100%;
 }
 
 .now-playing__side {
-    margin-left: 3%;
+    float: left;
     width: 50%;
+
 }
 
 /** Progress **/
@@ -40,8 +39,8 @@
 }
 
 .progress__bar {
-    background-color: #eee;
-    height: 4px;
+    background-color: black;
+    height: 11px;
 }
 .main-wrapper {
     height: 100px;
@@ -49,8 +48,6 @@
     background-color:white;
 }
 .App-header{
-    width: 800px;
-    margin-left: 10%;
     background-color:white;
  
    
