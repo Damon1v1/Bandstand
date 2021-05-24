@@ -12,6 +12,10 @@ const connectDB = require("./config/db")
 const app = express();
 
 connectDB();
+app.use(express.json({ extended: false }));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/auth', require('./routes/auth'));
+
 app.use(cors());
 
 // create express server
@@ -28,7 +32,7 @@ const io = socketIo(server, {
 });
 
 // back-end port number
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 // establish socket.io controls
 const USER_JOIN_CHAT_EVENT = "USER_JOIN_CHAT_EVENT";
