@@ -6,6 +6,8 @@ const socketIo = require("socket.io");
 const { addUser, removeUser, getUsersInRoom } = require("./users");
 const { addMessage, getMessagesInRoom } = require("./messages");
 const mongoose = require("mongoose")
+const registrationRoutes = require("./route");
+const bodyParser = require("body-parser");
 
 // set app to use express and cors
 const app = express();
@@ -14,10 +16,15 @@ app.use(cors());
 // create express server
 const server = http.createServer(app);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/users").then(
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost/users").then(
   () => { console.log('Database is connected') },
   err => { console.log('Can not connect to the database' + err) }
-);;
+);
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use("./models/Users", registrationRoutes);
 
 // set up websocket and cors permission on the server
 const io = socketIo(server, {
@@ -84,3 +91,5 @@ app.get("/rooms/:roomId/messages", (req, res) => {
   const messages = getMessagesInRoom(req.params.roomId);
   return res.json({ messages });
 });
+
+module.exports = app;

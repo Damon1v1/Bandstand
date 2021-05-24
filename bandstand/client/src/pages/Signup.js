@@ -93,35 +93,78 @@ export default class SignUp extends Component {
       };
 
     render() {
+        const {register, error, user_name_taken} = this.state;
+
         return (
-            <form>
-                <h3>Sign Up</h3>
-
-                <div className="form-group">
-                    <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
-                </div>
-
-                <div className="form-group">
-                    <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
-                </div>
-
-                <div className="form-group">
-                    <label>Username</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
-
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                <p className="forgot-password text-right">
-                    <a href="/Login">Already Registered</a>
-                </p>
-            </form>
+            <div className="Registration">
+        <h1> {REGISTRATION_FIELDS.REGISTRATION_HEADING} </h1> <form
+          onSubmit={this.onSubmit}
+        >
+          <div>
+            <div className="fields">
+              <p> {REGISTRATION_FIELDS.FIRST_NAME} </p>
+              {' '}
+              <input
+                type="text"
+                value={this.state.first_name}
+                name="FirstName"
+                onChange={this.handleOnChangeFirstName}
+              />
+              {' '}
+            </div> <div className="fields">
+              <p> {REGISTRATION_FIELDS.LAST_NAME} </p>
+              {' '}
+              <input
+                type="text"
+                value={this.state.last_name}
+                name="LastName"
+                onChange={this.handleOnChangeLastName}
+              />
+              {' '}
+            </div> <div className="fields">
+              <p> {COMMON_FIELDS.USER_NAME} </p>
+              {' '}
+              <input
+                type="text"
+                className={classNames ({error: user_name_taken})}
+                value={this.state.user_name}
+                name="Username"
+                onBlur={this.handleOnBlur}
+                onChange={this.handleOnChangeUserName}
+                autoComplete="Username"
+                required
+              />
+            </div> <div className="fields">
+              <p> {COMMON_FIELDS.PASSWORD} </p>
+              {' '}
+              <input
+                type="password"
+                value={this.state.password}
+                name="Password"
+                onChange={this.handleOnChangePassword}
+                autoComplete="password"
+                required
+              />
+            </div> <div className="buttons">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={user_name_taken}
+              >
+                {' '}{REGISTRATION_FIELDS.REGISTER}{' '}
+              </button>
+              {' '}
+              <Link to="/login"> {REGISTRATION_FIELDS.CANCEL} </Link>
+              {' '}
+            </div>{' '}
+          </div>{' '}
+        </form>
+        {' '}
+        {error && <Error message={ERROR_IN_REGISTRATION} />}
+        {' '}
+        {register && <Message message={REGISTRATION_MESSAGE} />}
+        {' '}
+      </div>
         );
     }
 }
