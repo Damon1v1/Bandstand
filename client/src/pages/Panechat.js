@@ -56,19 +56,17 @@ const Panechat  = () => {
         <div>
             <div style={{ marginTop: "38px" }}>
                 <button onClick={() => setState({ isPaneOpenBottom: true })}>
-                    Click to join the chatroom 
+                    Click here to join the chatroom!
                 </button>
             </div>
             <SlidingPane
+                    closeIcon={<div>Click here to collapse the chat</div>}
                     className="some-custom-class"
-                    closeIcon={<div> Back</div>}
                     isOpen={state.isPaneOpenBottom }
-                    title="Welcom to the Spotify Chatroom!"
+                    title="Welcome to the Bandstand chatroom!"
                     from="bottom"
                     width="100%"
-                    onRequestClose={() => {
-                    // triggered on "<" on left top click or on outside click
-                    setState({ isPaneOpen: false }); }}
+                    onRequestClose={() => setState({ isPaneOpenBottom: false })}
                     >
                 <div><Chat /></div>
             </SlidingPane>

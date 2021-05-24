@@ -44,7 +44,7 @@ const  PaneSidebar = () => {
                         </Link>
                     </div><br />
                     <div>
-                        <Link to="#">
+                        <Link to="/">
                             <button type="submit" className="btn btn-block ">Logout</button>
                         </Link>
                     </div>
