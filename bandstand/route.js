@@ -1,7 +1,8 @@
 const express = require('express');
-const registrationRoutes = express.Router();
+const router = express.Router();
 const bcrypt = require('bcryptjs');
-let Registration = require('./models/Users');
+const jwt = ("jsonwebtoken")
+const User = require('./models/Users');
 let RouteNames = require('./constants/constants');
 //NOTE  Registration route
 registrationRoutes.route(RouteNames.register).post(function(req, res) {
