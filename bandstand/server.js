@@ -36,7 +36,7 @@ const io = socketIo(server, {
 });
 
 // back-end port number
-const PORT = process.env.PORT || 4000;
+const PORT = 4000;
 
 // establish socket.io controls
 const USER_JOIN_CHAT_EVENT = "USER_JOIN_CHAT_EVENT";
