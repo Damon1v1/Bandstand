@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
@@ -10,7 +10,7 @@ function Navbar() {
       <div className="navbar justify-content-end">
         <ul className="navbar-nav ">
            <li className="nav-item justify-right">
-            <Link
+            {/* <Link
               to="/chatroom"
               className={
                 window.location.pathname === "/" || window.location.pathname === "/log-in"
@@ -29,13 +29,13 @@ function Navbar() {
               ChatRoom
             </Link>
           </li>
-          <li className="nav-item">
-            <Link
+          <li className="nav-item"> */}
+            {/* <Link
               to="/"
               className={window.location.pathname === "/log-out" ? "nav-link active" : "nav-link"}
             >
               Log out
-            </Link>
+            </Link> */}
           </li>
         </ul>
       </div>

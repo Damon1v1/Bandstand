@@ -44,7 +44,7 @@ const  PaneSidebar = () => {
                         </Link>
                     </div><br />
                     <div>
-                        <Link to="#">
+                        <Link to="/" className={window.location.pathname === "/log-out" ? "nav-link active" : "nav-link"}>
                             <button type="submit" className="btn btn-block ">Logout</button>
                         </Link>
                     </div>

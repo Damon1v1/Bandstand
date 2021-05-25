@@ -46,7 +46,8 @@
 .main-wrapper {
     height: 100px;
     width: 500px;
-    background-color:white;
+    background-color: white;
+    
 }
 .App-header{
     width: 800px;
@@ -61,4 +62,5 @@
 }
 .App {
     background-color: white;
+    
 }

@@ -1,21 +1,59 @@
+// import React, { useState } from "react";
+// import SlidingPane from "react-sliding-pane";
+// import "react-sliding-pane/dist/react-sliding-pane.css";
+// import ChatWindow from "../components/ChatWindow";
+// import "./Pane.css";
+
+
+// const Panechat  = () => {
+
+//     const [state, setState] = useState({
+//       isPaneOpen: false,
+//       isPaneOpenLeft: false,
+//     });
+
+//     return (
+//         <div>
+                
+                    
+//             <div style={{ marginTop: "38px" }}>
+//                 <button onClick={() => setState({ isPaneOpenBottom: true })}>
+//                     Click to join the chatroom 
+//                 </button>
+//             </div>
+//             <SlidingPane
+//                     className="some-custom-class"
+//                     closeIcon={<div> Back</div>}
+//                     isOpen={state.isPaneOpenBottom }
+//                     title="Welcom to the Spotify Chatroom!"
+//                     from="bottom"
+//                     width="100%"
+//                     onRequestClose={() => {
+//                     // triggered on "<" on left top click or on outside click
+//                     setState({ isPaneOpen: false }); }}
+//                     >
+//                 <div><ChatWindow /></div>
+//             </SlidingPane>
+                
+//         </div>
+//     )
+// };
+
+// export default Panechat;
+
 import React, { useState } from "react";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
-import ChatWindow from "../components/ChatWindow";
+// import ChatWindow from "../components/ChatWindow";
+import Chat from "../components/chat/Chat";
 import "./Pane.css";
-//import Chat from "../components/chat/Chat";
-
 const Panechat  = () => {
-
     const [state, setState] = useState({
       isPaneOpen: false,
       isPaneOpenLeft: false,
     });
-
     return (
         <div>
-                
-                    
             <div style={{ marginTop: "38px" }}>
                 <button onClick={() => setState({ isPaneOpenBottom: true })}>
                     Click to join the chatroom 
@@ -23,7 +61,7 @@ const Panechat  = () => {
             </div>
             <SlidingPane
                     className="some-custom-class"
-                    closeIcon={<div> Back</div>}
+                    closeIcon={<div> Collapse Chatroom</div>}
                     isOpen={state.isPaneOpenBottom }
                     title="Welcom to the Spotify Chatroom!"
                     from="bottom"
@@ -32,14 +70,11 @@ const Panechat  = () => {
                     // triggered on "<" on left top click or on outside click
                     setState({ isPaneOpen: false }); }}
                     >
-                <div><ChatWindow /></div>
+                <div><Chat /></div>
             </SlidingPane>
-                
         </div>
     )
 };
-
 export default Panechat;
-     
-  
+
   

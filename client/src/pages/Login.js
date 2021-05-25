@@ -9,7 +9,7 @@ export default class Login extends Component {
         return (
           <div className="log">
             <form>
-                <h1>Sign In</h1>
+                <h1><strong>Sign In</strong></h1>
                 <br />
 
                 <div className="form-group">

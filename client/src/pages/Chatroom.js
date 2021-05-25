@@ -36,7 +36,7 @@ function Chatroom() {
                        
                                 <SpotifyPlayer></SpotifyPlayer>
                                 
-                                <iframe src="https://open.spotify.com/embed/playlist/4qtTFHqg0TsNXJkgOPclKU" width="300" height="380" frameBorder="0" allowtransparency="true" title="music" allow="encrypted-media"></iframe>  
+                                {/* <iframe src="https://open.spotify.com/embed/playlist/4qtTFHqg0TsNXJkgOPclKU" width="300" height="380" frameborder="0" allowtransparency="true" title="music" allow="encrypted-media"></iframe>   */}
                                     
                         </div>
 
