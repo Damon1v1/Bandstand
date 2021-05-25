@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import { Form, InputGroup, Button } from 'react-bootstrap';
 //import Sidebar from './components/Sidebar';
 import "./style.css";

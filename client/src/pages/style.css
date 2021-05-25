@@ -11,10 +11,7 @@
 }
 .Row1 {
     padding-bottom: 0%;
-    
-    background-color: white;
-    border-top: 6px rgb(39, 152, 160);
-    width: 100% !important;
+    background-color: aliceblue;
     text-align: center;
     box-shadow:5px 10px;
     
@@ -44,8 +41,6 @@ body {
 }
 
 .media{
-    width: 100%;
-    float: center;
     text-align:center;
 
 }

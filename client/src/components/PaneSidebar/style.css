@@ -1,4 +1,10 @@
 .Image {
     position: relative;
-    left: 25%;
+    
+    
+}
+.btn3{
+    background-color: rgb(117, 106, 211);
+    color:white;
+    border: none;
 }

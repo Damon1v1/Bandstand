@@ -3,7 +3,7 @@ import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
 import Image from 'react-bootstrap/Image';
 import { Link } from "react-router-dom";
-//import "./styles.css";
+import "./style.css";
 
 
 
@@ -32,20 +32,20 @@ const  PaneSidebar = () => {
                 onRequestClose={() => setState({ isPaneOpenLeft: false })}
                 >
                 <div>
-                    <Image className="Image" src="user.jfif" width={150} height={150} roundedCircle/>
+                    <Image className="Image" src="coco1.jpg" width={150} height={150} roundedCircle/>
 
                     <div className="name"><strong>Name of User</strong></div><br />
                     <div>
                         <Link to="#">
-                            <button type="submit" className="btn btn-block">Profile</button>
+                            <button type="submit" className="btn3 btn-block">Profile</button>
                         </Link> <br />
                         <Link to="#">
-                            <button type="submit" className="btn btn-block">Settings</button>
+                            <button type="submit" className="btn3 btn-block">Settings</button>
                         </Link>
                     </div><br />
                     <div>
-                        <Link to="/" className={window.location.pathname === "/log-out" ? "nav-link active" : "nav-link"}>
-                            <button type="submit" className="btn btn-block ">Logout</button>
+                        <Link to="/">
+                            <button type="submit" className="btn3 btn-block ">Logout</button>
                         </Link>
                     </div>
                 </div>

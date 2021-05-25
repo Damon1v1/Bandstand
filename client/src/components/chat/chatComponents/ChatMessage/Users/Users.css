@@ -1,7 +1,12 @@
+h3 {
+  float: left;
+  text-align: left;
+}
 .user-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 8px;
+  float: left;
+  margin: 5px;
   padding: 0;
 }
 
@@ -10,5 +15,5 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 8px;
+  margin: 2px;
 }

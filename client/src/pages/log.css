@@ -14,7 +14,13 @@ body {
   background: linear-gradient(to right, black, hsl(239, 61%, 63%), black);
 }
 
-
+.log {
+  position: relative;
+  /* top: 50%; */
+  /* bottom: 30%;
+  left: 15%;
+  right: 50%; */
+}
 
 
 
@@ -73,8 +79,13 @@ form {
    max-width: 60em;
   
    text-align: center;
-   margin-top: 25%;
+   /* margin-top: 25%; */
    padding-left: 20%;
+   padding-top: 20%;
+
+  
+    
+    
    
 }
 

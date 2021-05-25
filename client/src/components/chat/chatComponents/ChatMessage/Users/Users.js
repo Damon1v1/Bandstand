@@ -6,7 +6,7 @@ import "./Users.css";
 const Users = ({ users }) => {
   return users.length > 0 ? (
     <div>
-      {/* <h2>Also in this room:</h2> */}
+      {/* <h3>Users in this room:</h3> */}
       <ul className="user-list">
         {users.map((user, index) => (
           <li key={index} className="user-box">
@@ -16,8 +16,9 @@ const Users = ({ users }) => {
         ))}
       </ul>
     </div>
-  ) : (
-    <div>There is no one else in this room</div>
+  )
+   : (
+    <div></div>
   );
 };
 
