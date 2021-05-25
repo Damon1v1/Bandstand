@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../context/alert/alertContext';
 import AuthContext from '../context/auth/authContext';
+
 const Signup = props => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
@@ -29,11 +30,11 @@ const Signup = props => {
 
   const { first_name, last_name, username, password } = user;
 
-  const onChange = e => setUser({ ...user, [e.target.username]: e.target.value });
+  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
     e.preventDefault();
-    if (first_name === '' || last_name === '' || username=== '' || password === '') {
+    if (first_name === '' || last_name === '' || username === '' || password === '') {
       setAlert('Please enter all fields', 'danger');
     } else {
       register({
@@ -48,11 +49,11 @@ const Signup = props => {
   return (
     <div className='form-container'>
       <h1>
-         BANDSTAND
+        Account <span className='text-primary'>Register</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='first_name'>First Name</label>
+          <label htmlFor='name'>First Name</label>
           <input
             id='first_name'
             type='text'
@@ -63,10 +64,10 @@ const Signup = props => {
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='email'>Last Name</label>
+          <label htmlFor='last_name'>Last Name</label>
           <input
             id='last_name'
-            type='last_name'
+            type='text'
             name='last_name'
             value={last_name}
             onChange={onChange}
@@ -82,14 +83,14 @@ const Signup = props => {
             value={username}
             onChange={onChange}
             required
-            minLength='5'
+            minLength='6'
           />
         </div>
         <div className='form-group'>
           <label htmlFor='password'>Password</label>
           <input
             id='password'
-            type='passwor'
+            type='password'
             name='password'
             value={password}
             onChange={onChange}
