@@ -1,8 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import AuthState from './context/auth/AuthState';
+import AlertState from './context/alert/AlertState';
+import PrivateRoute from './components/routing/PrivateRouting';
+
 import Chatroom from "./pages/Chatroom";
 //import Navbar from "./components/Navbar";
  //import Footer from "./components/Footer";
@@ -18,12 +22,17 @@ function App() {
     <Router>
       
           <Wrapper >
-            <Route exact path="/" component={Login} />
-            <Route exact path="/Login" component={Login} />
-            <Route exact path="/Signup" component={Signup} />
-            <Route exact path="/Chatroom" component={Chatroom} />
-            <Route exact path="/forgotPass" component={forgotPass} />
-            <Route exact path="/Panechat" component={Panechat} />
+            <AuthState>
+              <AlertState>
+                <PrivateRoute exact path="/" component={Login} />
+                <Route exact path="/Login" component={Login} />
+                <Route exact path="/Signup" component={Signup} />
+                <Route exact path="/Chatroom" component={Chatroom} />
+                <Route exact path="/forgotPass" component={forgotPass} />
+                <Route exact path="/Panechat" component={Panechat} />
+              </AlertState>
+            </AuthState>
+            
           </Wrapper>
       
     </Router>

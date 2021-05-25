@@ -5,26 +5,22 @@ const cors = require("cors");
 const socketIo = require("socket.io");
 const { addUser, removeUser, getUsersInRoom } = require("./users");
 const { addMessage, getMessagesInRoom } = require("./messages");
-const mongoose = require("mongoose")
-const registrationRoutes = require("./route");
-const bodyParser = require("body-parser");
+const path = require("path");
+const connectDB = require("./config/db")
 
 // set app to use express and cors
 const app = express();
+
+connectDB();
+app.use(express.json({ extended: false }));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/auth', require('./routes/auth'));
+
 app.use(cors());
 
 // create express server
 const server = http.createServer(app);
 
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/users").then(
-  () => { console.log('Database is connected') },
-  err => { console.log('Can not connect to the database' + err) }
-);
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use("./models/Users", registrationRoutes);
 
 // set up websocket and cors permission on the server
 const io = socketIo(server, {
@@ -36,7 +32,7 @@ const io = socketIo(server, {
 });
 
 // back-end port number
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 // establish socket.io controls
 const USER_JOIN_CHAT_EVENT = "USER_JOIN_CHAT_EVENT";
