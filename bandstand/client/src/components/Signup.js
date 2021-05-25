@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import AlertContext from '../context/alert/alertContext';
 import AuthContext from '../context/auth/authContext';
-const Register = props => {
+const Signup = props => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
 
@@ -48,7 +48,7 @@ const Register = props => {
   return (
     <div className='form-container'>
       <h1>
-        Account <span className='text-primary'>Register</span>
+         BANDSTAND
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
@@ -107,4 +107,4 @@ const Register = props => {
   );
 };
 
-export default Register;
+export default Signup;
