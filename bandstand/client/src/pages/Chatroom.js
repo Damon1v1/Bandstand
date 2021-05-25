@@ -24,7 +24,7 @@ function Chatroom() {
 
         <div style={{width: '100%', height: '90%'}}>
         
-            <Navbar />       
+            {/* <Navbar />        */}
             <br />
             <br /> 
             <Row className="main-row row justify-content-center">
