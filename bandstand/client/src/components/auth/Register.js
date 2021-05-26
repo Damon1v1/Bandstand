@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react';
-import AlertContext from '../context/alert/alertContext';
-import AuthContext from '../context/auth/authContext';
+import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
 
-const Signup = props => {
+const Register = props => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
 
@@ -22,25 +22,26 @@ const Signup = props => {
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    first_name: '',
-    last_name: '',
-    username: '',
-    password: ''
+    name: '',
+    email: '',
+    password: '',
+    password2: ''
   });
 
-  const { first_name, last_name, username, password } = user;
+  const { name, email, password, password2 } = user;
 
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
     e.preventDefault();
-    if (first_name === '' || last_name === '' || username === '' || password === '') {
+    if (name === '' || email === '' || password === '') {
       setAlert('Please enter all fields', 'danger');
+    } else if (password !== password2) {
+      setAlert('Passwords do not match', 'danger');
     } else {
       register({
-        first_name,
-        last_name,
-        username,
+        name,
+        email,
         password
       });
     }
@@ -53,37 +54,25 @@ const Signup = props => {
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='name'>First Name</label>
+          <label htmlFor='name'>Name</label>
           <input
-            id='first_name'
+            id='name'
             type='text'
-            name='first_name'
-            value={first_name}
+            name='name'
+            value={name}
             onChange={onChange}
             required
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='last_name'>Last Name</label>
+          <label htmlFor='email'>Email Address</label>
           <input
-            id='last_name'
-            type='text'
-            name='last_name'
-            value={last_name}
+            id='email'
+            type='email'
+            name='email'
+            value={email}
             onChange={onChange}
             required
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Username</label>
-          <input
-            id='username'
-            type='username'
-            name='username'
-            value={username}
-            onChange={onChange}
-            required
-            minLength='6'
           />
         </div>
         <div className='form-group'>
@@ -93,6 +82,18 @@ const Signup = props => {
             type='password'
             name='password'
             value={password}
+            onChange={onChange}
+            required
+            minLength='6'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='password2'>Confirm Password</label>
+          <input
+            id='password2'
+            type='password'
+            name='password2'
+            value={password2}
             onChange={onChange}
             required
             minLength='6'
@@ -108,4 +109,4 @@ const Signup = props => {
   );
 };
 
-export default Signup;
+export default Register;

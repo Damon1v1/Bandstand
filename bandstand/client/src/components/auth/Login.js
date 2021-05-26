@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
-import AlertContext from "../context/alert/alertContext";
-import AuthContext from "../context/auth/authContext";
+import React, { useState, useContext, useEffect } from 'react';
+import AuthContext from '../../context/auth/authContext';
+import AlertContext from '../../context/alert/alertContext';
 
 const Login = props => {
   const alertContext = useContext(AlertContext);
@@ -11,7 +11,7 @@ const Login = props => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push('/chatroom');
+      props.history.push('/');
     }
 
     if (error === 'Invalid Credentials') {
@@ -22,21 +22,21 @@ const Login = props => {
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    username: '',
+    email: '',
     password: ''
   });
 
-  const { username, password } = user;
+  const { email, password } = user;
 
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
     e.preventDefault();
-    if (username === '' || password === '') {
+    if (email === '' || password === '') {
       setAlert('Please fill in all fields', 'danger');
     } else {
       login({
-        username,
+        email,
         password
       });
     }
@@ -49,12 +49,12 @@ const Login = props => {
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='username'>Username</label>
+          <label htmlFor='email'>Email Address</label>
           <input
-            id='username'
-            type='username'
-            name='username'
-            value={username}
+            id='email'
+            type='email'
+            name='email'
+            value={email}
             onChange={onChange}
             required
           />
